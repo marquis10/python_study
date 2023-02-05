@@ -9,14 +9,11 @@
 Введите целые числа через пробел: 1 2 3
 Результат: 2 1 3
 """
-numbers = input('Введите целые числа через пробел: ')
-lst = numbers.split(' ')
+lst = input('Введите целые числа через пробел: ').split(' ')
 if len(lst) % 2 == 0:
     r = len(lst)
-    print(r)
 else:
     r = len(lst) - 1
-    print(r)
 temp = 0
 i = 0
 while i < r:
