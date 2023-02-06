@@ -18,7 +18,6 @@ temp = 0
 i = 0
 while i < r:
     temp = lst[i]
-    lst[i] = lst[i + 1]
-    lst[i + 1] = temp
+    lst[i], lst[i + 1] = lst[i + 1], temp
     i += 2
 print(lst)

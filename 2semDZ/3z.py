@@ -13,6 +13,5 @@
 <class 'NoneType'>
 """
 lst = [123, 'asd', 3.14, True, None]
-r = range(len(lst))
-for i in r:
-    print(type(lst[i]))
+for i in lst:
+    print(type(i))
