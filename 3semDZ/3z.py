@@ -12,3 +12,11 @@
 Набор натуральных чисел можно задать непосредственно в коде,
 например, my_list = [7, 5, 3, 3, 2].
 """
+lst = [7, 5, 3, 2, 0]
+print(f'Стартовый список: {lst}')
+number = int(input('Введите число: '))
+for i in range(len(lst)):
+    if number > lst[i]:
+        lst.insert(i, number)
+        break
+print(f'Конечный список: {lst}')

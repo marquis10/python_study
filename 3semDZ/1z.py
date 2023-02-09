@@ -7,4 +7,25 @@
 Результат через список: Осень
 Результат через словарь: Осень
 """
-
+# Вариант решения через список
+winter = [1, 2, 12]
+spring = [3, 4, 5]
+summer = [6, 7, 8]
+autumn = [9, 10, 11]
+months = int(input('Введите месяц в виде числа: '))
+for i in range(len(winter)):
+    if months == winter[i]:
+        print('Результат значения через список: winter')
+    elif months == spring[i]:
+        print('Результат значения через список: spring')
+    elif months == summer[i]:
+        print('Результат значения через список: summer')
+    elif months == autumn[i]:
+        print('Результат значения через список: autumn')
+# Вариант решения через словарь
+seasons = {'winter': (1, 2, 12), 'spring': (3, 4, 5), 'summer': (6, 7, 8), 'autumn': (9, 10, 11)}
+#months = int(input('Введите месяц в виде числа: '))
+for i in seasons:
+    for j in seasons[i]:
+        if months == j:
+            print(f'Результат значения через словарь: {i}')
