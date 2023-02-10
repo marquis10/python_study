@@ -12,3 +12,6 @@
 1. раз
 2. перерефриж
 """
+line = input('Введите слова через пробел: ').split(' ')
+for i in range(len(line)):
+    print(f'{i + 1}. {line[i][:10]}')
