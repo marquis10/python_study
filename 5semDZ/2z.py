@@ -14,3 +14,26 @@
 Введите число: 123
 Количество четных и нечетных цифр в числе равно: (1, 2)
 """
+nums = input('Введите натуральное число: ')
+num = int(nums)
+count1 = 0
+count2 = 0
+temp = 0
+
+def division(num, nums, temp, count1, count2):
+    if temp >= len(nums):
+        return count1, count2
+    else:
+        n = num % 10
+        num = num // 10
+        temp += 1
+
+        if n % 2 == 0:
+            count1 += 1
+        else:
+            count2 += 1
+
+    return division(num, nums, temp, count1, count2)
+
+
+print(f'Количество чётных и нечётных цифр в числе {num} = {division(num, nums, temp, count1, count2)}')

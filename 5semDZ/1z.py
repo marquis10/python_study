@@ -23,3 +23,51 @@
 Вы вместо трехзначного числа ввели строку (((. Исправьтесь
 Введите операцию (+, -, *, / или 0 для выхода):
 """
+
+
+def validation1(operation):
+    if operation == '0':
+        return operation
+    elif operation == '+' or operation == '-' or operation == '*' or operation == '/':
+        return operation
+    else:
+        operation1 = input('Не правильная операция, введите ещё раз (+, -, *, / или 0 для выхода): ')
+        return validation1(operation1)
+
+
+def validation2(n1):
+    if type(n1) != int:
+        n1 = (int(input('Вы ввели некорректные данные. Введите 1 число: ')))
+        return validation2(n1)
+    else:
+        return n1
+
+def validation3(n2):
+    if type(n2) != int:
+        n2 = (int(input('Вы ввели некорректные данные. Введите 2 число: ')))
+        return validation3(n2)
+    else:
+        return n2
+
+
+def calculation(operation, num1, num2):
+    if operation == '+':
+        return(num1 + num2)
+    elif operation == '-':
+        return(num1 - num2)
+    elif operation == '*':
+        return(num1 * num2)
+    elif operation == '/':
+        return(num1 / num2)
+
+
+operation = input('Введите операцию (+, -, *, / или 0 для выхода): ')
+validation1(operation)
+if operation != '0':
+    num1 = int(input('Введите 1 число: '))
+    validation2(num1)
+    num2 = int(input('Введите 2 число: '))
+    validation3(num2)
+    print(calculation(operation, num1, num2))
+else:
+    print('Работа с программой завершена')

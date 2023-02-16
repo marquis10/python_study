@@ -16,3 +16,27 @@
 Решите через рекурсию. В задании нельзя применять циклы.
 Допускается исп-е встроенных ф-ций
 """
+
+def full_table(count1, count2, str_num = ''):
+    if count2 > 128:
+        count2 = 128
+    if count1 > 127:
+        return str_num
+    elif count1 < count2:
+        return str_table(count1, count2, str_num)
+
+
+def str_table(count1, count2, str_num):
+    if count1 < count2:
+        str_num = str_num + ' ' + str(count1) + ' ' + '-' + ' ' + chr(count1)
+        count1 += 1
+        return str_table(count1, count2, str_num)
+    else:
+        print(str_num)
+        count2 += 10
+        return full_table(count1, count2)
+
+
+count1 = 32
+count2 = 42
+full_table(count1, count2)

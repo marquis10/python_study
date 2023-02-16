@@ -10,3 +10,24 @@
 Правой части выражения в рекурсивной ф-ции быть не должно!
 Решите через рекурсию. В задании нельзя применять циклы.
 """
+
+
+def result(n, i, sum1):
+    if i > n:
+        return check(n, sum1)
+    else:
+        sum1 += i
+        i += 1
+        return result(n, i, sum1)
+def check(n, sum1):
+    temp = n + 1
+    sum2 = n * temp / 2
+    if sum1 == sum2:
+        return print(f'Для n = {n}\nВыполняется равенство 1 + 2 + 3 + ... + n = n (n + 1) / 2\n{sum1} = {sum2}')
+    else:
+        return n
+
+n = int(input('Введите любое натуральное число: '))
+i = 1
+sum1 = 0
+result(n, i, sum1)

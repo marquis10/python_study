@@ -8,3 +8,23 @@
 Решите через рекурсию. В задании нельзя применять циклы.
 Нужно обойтисть без создания массива!
 """
+
+def numbers(n, num, sum, i):
+    if i == n:
+        return print(f'Количество элементов - {n}, их сумма = {sum}')
+    else:
+        if i % 2 != 0:
+            num = num / 2
+            sum = sum - num
+        else:
+            num = num / 2
+            sum = sum + num
+        i += 1
+    return numbers(n, num, sum, i)
+
+
+n = int(input('Введите число элементов: '))
+num = 1
+sum = num
+i = 1
+numbers(n, num, sum, i)

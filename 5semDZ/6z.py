@@ -6,3 +6,31 @@
 то вывести загаданное число.
 Решите через рекурсию. В задании нельзя применять циклы.
 """
+import random
+
+
+def guess(number, n, count):
+    if count == 10:
+        return print(f'Количество попыток закончилось, загаданное число было: {number}')
+    elif n == number:
+        return print('Поздравляем!!! Вы угадали загаданное число')
+    else:
+        n = int(input(f'{count} Попытка. Введите число заного: '))
+        return check(number, n, count)
+
+
+def check(number, n, count):
+    if n > number:
+        print(f'Вы не угадали. Число {n} больше загаданного')
+        count += 1
+        return guess(number, n, count)
+    else:
+        print(f'Вы не угадали. Число {n} меньше загаданного')
+        count += 1
+        return guess(number, n, count)
+
+number = random.randint(0, 100)
+print('Отгадайте число от 0 до 100. У вас 10 попыток!')
+count = 1
+n = int(input(f'{count} Попытка. Введите число: '))
+check(number, n, count)
