@@ -17,19 +17,15 @@
 """
 
 
-def reversal(nums, num, count, inv_num):
+def reversal(nums, num, count = 0, inv_num = ''):
     temp = ''
     if count == len(nums):
         return print(inv_num)
     else:
         temp = num % 10
-        num = num // 10
-        count += 1
         inv_num = inv_num + str(temp)
-    return reversal(nums, num, count, inv_num)
+    return reversal(nums, num // 10, count + 1, inv_num)
 
 nums = input('Введите натуральное число: ')
 num = int(nums)
-count = 0
-inv_num = ''
-reversal(nums, num, count, inv_num)
+reversal(nums, num)

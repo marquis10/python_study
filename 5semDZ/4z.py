@@ -9,22 +9,18 @@
 Нужно обойтисть без создания массива!
 """
 
-def numbers(n, num, sum, i):
+def numbers(n, num = 1.0, summa = 1.0, i = 1):
     if i == n:
-        return print(f'Количество элементов - {n}, их сумма = {sum}')
+        return print(f'Количество элементов - {n}, их сумма = {summa}')
     else:
         if i % 2 != 0:
             num = num / 2
-            sum = sum - num
+            summa = summa - num
         else:
             num = num / 2
-            sum = sum + num
-        i += 1
-    return numbers(n, num, sum, i)
+            summa = summa + num
+    return numbers(n, num, summa, i + 1)
 
 
 n = int(input('Введите число элементов: '))
-num = 1
-sum = num
-i = 1
-numbers(n, num, sum, i)
+numbers(n)
