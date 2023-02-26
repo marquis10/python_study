@@ -42,6 +42,7 @@ def validation2(n1):
     else:
         return n1
 
+
 def validation3(n2):
     if type(n2) != int:
         n2 = (int(input('Вы ввели некорректные данные. Введите 2 число: ')))
@@ -52,13 +53,13 @@ def validation3(n2):
 
 def calculation(operation, num1, num2):
     if operation == '+':
-        return(num1 + num2)
+        return (num1 + num2)
     elif operation == '-':
-        return(num1 - num2)
+        return (num1 - num2)
     elif operation == '*':
-        return(num1 * num2)
+        return (num1 * num2)
     elif operation == '/':
-        return(num1 / num2)
+        return (num1 / num2)
 
 
 operation = input('Введите операцию (+, -, *, / или 0 для выхода): ')
