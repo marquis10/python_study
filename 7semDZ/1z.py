@@ -10,3 +10,26 @@
 в указанном порядке (красный, желтый, зеленый).
 Проверить работу примера, создав экземпляр и вызвав описанный метод.
 """
+import time
+from time import sleep
+
+
+class TrafficLight:
+    __color = 'red'
+
+    def running(self):
+        print(self.__color)
+        sleep(7)
+        self.__color = 'yellow'
+        print(self.__color)
+        sleep(2)
+        self.__color = 'green'
+        print(self.__color)
+        sleep(10)
+
+
+traffic = TrafficLight()
+n = int(input('Введите количество итераций работы светофора: '))
+for i in range(n):
+    print(f'{i + 1} итерация')
+    traffic.running()
