@@ -18,26 +18,42 @@ ASCII(например, €);
 Реализовать считывание данных из созданного файла и проверить,
 совпадают ли они с исходными.
 """
+"""items:
+- computer
+- printer
+- keyboard
+- mouse
+items_ptice:
+  computer: 200€-1000€
+  keyboard: 5€-50€
+  mouse: 4€-7€
+  printer: 100€-300€
+items_quantity: 4"""
+import yaml
 
 
+dict_yaml = {
+    'one':['pc', 'monitor', 'keyboard', 'mouse'],
+    'two': 4,
+    'three': {'pc': '400€', 'monitor': '60€', 'keyboard': '12€', 'mouse': '6€'}
+}
 
+with open('file.yaml', 'w') as f_n:
+    yaml.safe_dump(dict_yaml, f_n, default_flow_style=False, allow_unicode=True)
 
+with open('file.yaml') as f:
+    obj = yaml.safe_load(f)
+print(obj)
 
-
-
-
-
-
-
-
-
-import socket
-
-obj_sock = socket.socket()
-
-# bytes ->
-obj_sock.sendto(var, ())
-
-#close
-
-клиент 1) 2)
+""" В файле file.yaml
+one:
+- pc
+- monitor
+- keyboard
+- mouse
+three:
+  keyboard: 12�
+  monitor: 60�
+  mouse: 6�
+  pc: 400�
+two: 4"""
