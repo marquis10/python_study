@@ -9,3 +9,10 @@
 --- обязательно!!! усложните задачу, "отловив" исключение,
 придумайте как это сделать
 """
+lst = ["attribute", "класс", "функция", "type"]
+for i in lst:
+    try:
+        byte = bytes(i, "ASCII")
+        print(byte)
+    except UnicodeEncodeError:
+        print(f" {i} - невозможно записать в байтовом типе с помощью маркировки b")
